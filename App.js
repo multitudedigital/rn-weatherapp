@@ -9,6 +9,7 @@ export default class App extends React.Component {
   state = {
     isLoading: true,
     temperature: 0,
+    location: null,
     weatherCondition: null,
     error: null
   };
@@ -32,10 +33,10 @@ export default class App extends React.Component {
     )
       .then(res => res.json())
       .then(json => {
-         console.log(json);
+        console.log(json);
         this.setState({
           temperature: json.main.temp,
-          location: json.name,
+          location: json.name+', '+json.sys.country,
           weatherCondition: json.weather[0].main,
           isLoading: false
         });
