@@ -76,7 +76,7 @@ export default class App extends React.Component {
           description: json.weather[0].description,
           isLoading: false
         });
-        //this.fetchBackground(json.weather[0].main);
+        this.fetchBackground(json.weather[0].main);
       });
   }
 
